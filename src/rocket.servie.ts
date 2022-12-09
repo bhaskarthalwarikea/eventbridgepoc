@@ -2,11 +2,11 @@ import { MQClient, MessageProperties } from '@aliyunmq/mq-http-sdk';
 
 export class RocketTest {
   private endpoint =
-    'http://1060444989355026.mqrest.cn-shanghai-internal.aliyuncs.com';
+    'TEST';
   private topic = 'TEST';
-  private instanceId = 'MQ_INST_1060444989355026_BYSJiG7X';
-  private accessKeyId = 'LTAI5tR2Bp9iJ1RGGTGiG6w4';
-  private accessKeySecret = '3JyViWWFlcnfJPojgZZn3tIQKxAycu';
+  private instanceId = 'MQ_INST';
+  private accessKeyId = 'AccessKey';
+  private accessKeySecret = 'AccessSecret';
 
   public async sendToTopic() {
     const client = new MQClient(
