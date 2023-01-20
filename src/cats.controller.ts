@@ -1,6 +1,5 @@
-import { Controller, Get, Post, Logger, Body, HttpCode, Res } from '@nestjs/common';
-import { CatsDto } from './cats.dto';
-import { Response } from 'express';
+import { Controller, Post, Logger, Body, HttpCode } from '@nestjs/common';
+import { Data } from './cats.dto';
 import { RocketTest } from './rocket.servie';
 
 @Controller('cats')
@@ -10,9 +9,9 @@ export class CatsController {
 
   @Post('simple')
   @HttpCode(200)
-  create(@Body() catsDto: CatsDto, @Res() res: Response) {
-    this.logger.log(catsDto);
-    res.status(204).send();
+  async create(@Body() data: Data) {
+    this.logger.log(data);
+    return 'Done Well';
   }
 
   @Post('rocket')

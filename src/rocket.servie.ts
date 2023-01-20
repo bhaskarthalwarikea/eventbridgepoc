@@ -4,7 +4,7 @@ export class RocketTest {
   private endpoint =
     'http://1060444989355026.mqrest.cn-shanghai-internal.aliyuncs.com';
   private topic = 'TEST';
-  private instanceId = 'MQ_INST_1060444989355026_BYSJiG7X';
+  private instanceId = 'MQ_INST_1060444989355026_BYVmstYm';
   private accessKeyId = 'LTAI5tR2Bp9iJ1RGGTGiG6w4';
   private accessKeySecret = '3JyViWWFlcnfJPojgZZn3tIQKxAycu';
 
@@ -17,11 +17,11 @@ export class RocketTest {
 
     const producer = client.getProducer(this.instanceId, this.topic);
     try {
-      for (let i = 0; i < 2; i++) {
+      for (let i = 0; i < 1; i++) {
         const msgProps = new MessageProperties();
-        msgProps.putProperty('a', i);
-        msgProps.messageKey('MessageKey');
-        const res = await producer.publishMessage('hello mq.', '', msgProps);
+        msgProps.messageKey('MessageKey' + '-' +i);
+        msgProps.startDeliverTime(Date.now() + 120 * 1000);
+        const res = await producer.publishMessage('hello mq.' + '-' +Date.now(), '', msgProps);
         console.log(
           'Publish message: MessageID:%s,BodyMD5:%s',
           res.body.MessageId,
