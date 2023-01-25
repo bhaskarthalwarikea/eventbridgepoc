@@ -1,4 +1,5 @@
 
+/* DTO received from the event brdige source */
 export interface SystemProperties {
     TRACE_ON: string;
     TIMER_DEQUEUE_MS: string;
