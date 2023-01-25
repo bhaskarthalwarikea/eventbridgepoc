@@ -2,11 +2,21 @@ import { MQClient, MessageProperties } from '@aliyunmq/mq-http-sdk';
 
 export class RocketTest {
   private endpoint =
-    'http://1060444989355026.mqrest.cn-shanghai-internal.aliyuncs.com';
+    'TEST';
   private topic = 'TEST';
+<<<<<<< HEAD
   private instanceId = 'MQ_INST_1060444989355026_BYSJiG7X';
+=======
+<<<<<<< HEAD
+  private instanceId = 'MQ_INST_1060444989355026_BYVmstYm';
+>>>>>>> 8088e80 (want to keep only this history)
   private accessKeyId = 'LTAI5tR2Bp9iJ1RGGTGiG6w4';
   private accessKeySecret = '3JyViWWFlcnfJPojgZZn3tIQKxAycu';
+=======
+  private instanceId = 'MQ_INST';
+  private accessKeyId = 'AccessKey';
+  private accessKeySecret = 'AccessSecret';
+>>>>>>> c7d6107 (Update rocket.servie.ts)
 
   public async sendToTopic() {
     const client = new MQClient(
